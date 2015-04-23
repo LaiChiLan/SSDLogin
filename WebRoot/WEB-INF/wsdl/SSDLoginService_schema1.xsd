@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://dao/" targetNamespace="http://dao/" version="1.0">
+
+  <xs:element name="Exception" type="tns:Exception"/>
+
+  <xs:element name="getEKPUserFullName" type="tns:getEKPUserFullName"/>
+
+  <xs:element name="getEKPUserFullNameResponse" type="tns:getEKPUserFullNameResponse"/>
+
+  <xs:complexType name="getEKPUserFullName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEKPUserFullNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
