@@ -13,12 +13,12 @@ public class DBUtil {
 
   public static Connection getConnection() throws Exception{	
 	  Connection conn = null;
-	  // 	String url="jdbc:oracle:thin:@192.168.10.201:1521:gdidcoa";
-	  // 	String userName = "ekp";
-	//  	String userPass = "gdidcoa";
-	    	String url="jdbc:oracle:thin:@219.137.165.219:1521:orcl";
-	    	String userName = "gdidc_dict";
-	     	String userPass = "limssuper";
+	 	String url="jdbc:oracle:thin:@192.168.10.201:1521:gdidcoa";
+	   	String userName = "ekp";
+	 	String userPass = "gdidcoa";
+	  // 	String url="jdbc:oracle:thin:@219.137.165.219:1521:orcl";
+	  //  	String userName = "gdidc_dict";
+	 //    	String userPass = "limssuper";
 	    	try {
 	    	Class.forName("oracle.jdbc.OracleDriver");
 			conn = DriverManager.getConnection(url,userName,userPass); 

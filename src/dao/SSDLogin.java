@@ -34,19 +34,19 @@ public class SSDLogin     {
      	    String SQL = "";
      		Connection conn  = DBUtil.getConnection();
 
-     	//	SQL = "select   el.fd_name   from sys_org_element el,sys_org_person pe "
-     	// 		+ "where el.fd_id = pe.fd_id  and el.fd_name_pinyin = ? and pe.fd_password = ? ";
-     		SQL = "select  tablename from  fldmaint where hypcapt = 'Comments'";
+     		SQL = "select   el.fd_name   from sys_org_element el,sys_org_person pe "
+     	 		+ "where el.fd_id = pe.fd_id  and el.fd_name_pinyin = ? and pe.fd_password = ? ";
+     	//	SQL = "select  tablename from  fldmaint where hypcapt = 'Comments'";
          	 System.out.println(SQL);
              PreparedStatement prep = conn.prepareStatement(SQL);  
-         //    prep.setString(1, rasclientid);
-        //     prep.setString(2, md5Pas);
+            prep.setString(1, rasclientid);
+            prep.setString(2, md5Pas);
      		try {
      			 	ResultSet rst = prep.executeQuery(); 	  	
      	        
      		     	while(rst.next()){
-     		     	//	userLogin.setFullname(rst.getString("fd_name") == null ? "" : rst.getString("fd_name") ); 	
-     		     		userLogin.setFullname(rst.getString("tablename") == null ? "" : rst.getString("tablename") ); 		
+     		     		userLogin.setFullname(rst.getString("fd_name") == null ? "" : rst.getString("fd_name") ); 	
+     		     	//	userLogin.setFullname(rst.getString("tablename") == null ? "" : rst.getString("tablename") ); 		
      		     		results += userLogin.toString();
      		    	}
      			
